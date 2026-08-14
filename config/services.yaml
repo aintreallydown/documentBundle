@@ -3,3 +3,9 @@ services:
         autowire: true
         autoconfigure: true
         public: true
+
+    aintreallydown\DocumentBundle\:
+        resource: '../src/*'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/DocumentBundle.php'
