@@ -14,7 +14,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Aintreallydown\\DocumentBundle\\": "src/"
+            "aintreallydown\\DocumentBundle\\": "src/"
         }
     },
     "authors": [
