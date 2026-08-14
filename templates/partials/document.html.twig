@@ -33,8 +33,6 @@
             </div>
         </div>
 
-    {% else %}
-
         {% if isApplication is defined %}
             <div class="center">
                 <img width="42" src="{{ absolute_url(asset('icons/puzzle.svg')) }}">
@@ -60,7 +58,7 @@
                 </div>
             </div>
         {% endif %}
-    {% endif %}
+    {% endfor %}
 </div>
 <!-- Popup : Document-->
 
