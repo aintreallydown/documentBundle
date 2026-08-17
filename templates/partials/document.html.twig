@@ -88,30 +88,30 @@
 
                 <div class="px-25 pb-3 mb-1 w-90">
 
-                    <p class="mb-1">{{ 'document.PopupLabel'|trans }}</p>
+                    <p class="mb-1">{{ 'document.popupLabel'|trans({'partner': partner }) }}</p>
 
                     <zb-input
                         name="{{ field_name(bundleForm.documents) }}" 
                         value="{{ field_value(bundleForm.documents) }}"
                         type="text"
-                        placeholder="{{ 'document.Placeholder'|trans }}"
-                        pattern="(locataire\.dossierfacile\.logement\.gouv|www\.dossierfacile)\.fr\/[a-z\-]+\/[a-zA-Z0-9\-]+"
+                        placeholder="{{ 'document.placeholder'|trans({'partner': partner }) }}"
+                        pattern="{{ document.pattern }}"
                         class="mb-0"
                         message="{
                             display: 'top',
-                            pattern: 'Ce n'est pas une URL DossierFacile',
+                            pattern: 'Ce n'est pas une URL',
                         }"
                     ></zb-input>
 
                     <a class="mt-10 ml-5 s5 t-color underline" href="https://www.dossierfacile.logement.gouv.fr/?mtm_campaign=123loger" target="_blank">
-                        {{ 'document.CreateDossierFacile'|trans }}
+                        {{ 'document.createPartnerFile'|trans({'partner': partner }) }}
                     </a>
                 </div>
 
                 <div class="pdl-ctas-footer center p-20">
 
                     <button class="btn w-90 p-15">
-                        {{ 'document.Validate'|trans }}
+                        {{ 'document.validate'|trans }}
                     </button>
                 </div>
 
