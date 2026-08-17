@@ -17,7 +17,7 @@
                         <img width="28" src="{{ absolute_url(asset('icons/visible.svg')) }}">
                     </a>
 
-                    {% if isApplication is not defined %}
+                    {% if isApplication is null %}
 
                         {% if bundleForm %}
                             {{ form_start(bundleForm, {'attr': {'class': 'w-45 pointer center z1'}}) }}
@@ -39,11 +39,11 @@
             </div>
         {% else %}
 
-            {% if isApplication is defined %}
+            {% if isApplication is not null %}
+
                 <div class="center">
                     <img width="42" src="{{ absolute_url(asset('icons/puzzle.svg')) }}">
                     <p class="my-20">{{ 'document.No_documents_added'|trans }}</p>
-
                 </div>
             {% else %}
 
@@ -74,7 +74,7 @@
 {% for document in get_documents() %}
 
 
-    {% if not file.extrafields and isApplication is not defined %}
+    {% if not file.extrafields and isApplication is null %}
 
         <zb-popup
             id="document-popup"
