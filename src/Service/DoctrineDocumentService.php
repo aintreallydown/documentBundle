@@ -16,7 +16,7 @@ class DoctrineDocumentService
     }
 
 
-    public function saveDocumentToRentalFile(RentalFile $file, $document): void
+    public function saveDocumentToRentalFile(RentalFile $file, array $document): void
     {
         $file->setExtrafields($document);
         $this->entityManager->flush();
