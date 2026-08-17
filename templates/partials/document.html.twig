@@ -63,9 +63,10 @@
         {% endif %}
     {% endfor %}
 </div>
+
 <!-- Popup : Document-->
 
-{# {% for document in get_documents() %}
+{% for document in get_documents() %}
 
 
     {% if isApplication is not defined %}
@@ -78,15 +79,15 @@
 
             <img zb-close class="ml-15 pb-30" width="11" src="{{ absolute_url(asset('icons/chevron-left.svg')) }}">
             
-            {{ form_start(form) }}
+            {{ form_start(bundleForm) }}
 
                 <div class="px-25 pb-3 mb-1 w-90">
 
                     <p class="mb-1">{{ 'document.PopupLabel'|trans }}</p>
 
                     <zb-input
-                        name="{{ field_name(form.documents) }}" 
-                        value="{{ field_value(form.documents) }}"
+                        name="{{ field_name(bundleForm.documents) }}" 
+                        value="{{ field_value(bundleForm.documents) }}"
                         type="text"
                         placeholder="{{ 'document.Placeholder'|trans }}"
                         pattern="(locataire\.dossierfacile\.logement\.gouv|www\.dossierfacile)\.fr\/[a-z\-]+\/[a-zA-Z0-9\-]+"
@@ -109,8 +110,8 @@
                     </button>
                 </div>
 
-                {{ form_widget(form._token) }}
-            {{ form_end(form, {'render_rest': false}) }}
+                {{ form_widget(bundleForm._token) }}
+            {{ form_end(bundleForm, {'render_rest': false}) }}
         </zb-popup>
     {% endif %}
-{% endfor %} #}
+{% endfor %}
