@@ -99,11 +99,11 @@
                         class="mb-0"
                         message="{
                             display: 'top',
-                            pattern: 'Ce n'est pas une URL',
+                            pattern: "{{ 'document.patternMessage'|trans({'partner': partner }) }}",
                         }"
                     ></zb-input>
 
-                    <a class="mt-10 ml-5 s5 t-color underline" href="https://www.dossierfacile.logement.gouv.fr/?mtm_campaign=123loger" target="_blank">
+                    <a class="mt-10 ml-5 s5 t-color underline" href="{{ document.link }}" target="_blank">
                         {{ 'document.createPartnerFile'|trans({'partner': partner }) }}
                     </a>
                 </div>
