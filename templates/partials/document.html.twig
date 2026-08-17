@@ -4,7 +4,7 @@
 
     {% for document in get_documents() %}
 
-        {% if file.extrafields %}
+        {% if file.extrafields is not null and file.extrafields['document'] is not null %}
 
             <div class="flex middle fit sm">
                 <div class="w-15 blue-frame shape:1/1">
@@ -74,7 +74,7 @@
 {% for document in get_documents() %}
 
 
-    {% if not file.extrafields and isApplication is null %}
+    {% if file.extrafields is null or file.extrafields['document'] is null  and isApplication is null %}
 
         <zb-popup
             id="document-popup"
