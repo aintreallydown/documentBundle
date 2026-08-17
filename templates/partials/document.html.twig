@@ -13,7 +13,7 @@
                 <h3 class="ml-15 w-65">{{ document.title }}</h3>
 
                 <div class="flex group sm middle right w-20">
-                    <a class="w-45 pointer center" href="{{ document.file }}" target="_blank">
+                    <a class="w-45 pointer center" href="{{ file.extrafields['document'] }}" target="_blank">
                         <img width="28" src="{{ absolute_url(asset('icons/visible.svg')) }}">
                     </a>
 
