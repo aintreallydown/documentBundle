@@ -43,14 +43,14 @@
 
                 <div class="center">
                     <img width="42" src="{{ absolute_url(asset('icons/puzzle.svg')) }}">
-                    <p class="my-20">{{ 'document.No_documents_added'|trans }}</p>
+                    <p class="my-20">{{ 'document.no_documents_added'|trans }}</p>
                 </div>
             {% else %}
 
                 <div class="center w-80">
 
                     <p class="pdl-infos-box t-left mb-3">
-                        {{ 'document.Partner_text'|trans }}<a href="{{ document.link }}" target="_blank">{{ document.websiteUrl }}</a> {{ document.textElement }}
+                        {{ 'document.partner_text'|trans }}<a href="{{ document.link }}" target="_blank">{{ document.websiteUrl }}</a> {{ document.textElement }}
                         <img class="pb-5" width="16" src="{{ absolute_url(asset('icons/' ~ document.image2)) }}"> .
                     </p>
                     
