@@ -4,62 +4,67 @@
 
     {% for document in get_documents() %}
 
-        <div class="flex middle fit sm">
-            <div class="w-15 blue-frame shape:1/1">
-                <img class="w-80 sm mr-5" src="{{ absolute_url(asset('icons/' ~ document.image1)) }}">
-            </div>
-            <h3 class="ml-15 w-65">{{ document.title }}</h3>
+        {% if file.extrafields %}
 
-            <div class="flex group sm middle right w-20">
-                <a class="w-45 pointer center" href="{{ document.file }}" target="_blank">
-                    <img width="28" src="{{ absolute_url(asset('icons/visible.svg')) }}">
-                </a>
+            <div class="flex middle fit sm">
+                <div class="w-15 blue-frame shape:1/1">
+                    <img class="w-80 sm mr-5" src="{{ absolute_url(asset('icons/' ~ document.image1)) }}">
+                </div>
+                <h3 class="ml-15 w-65">{{ document.title }}</h3>
 
-                {% if isApplication is not defined %}
+                <div class="flex group sm middle right w-20">
+                    <a class="w-45 pointer center" href="{{ document.file }}" target="_blank">
+                        <img width="28" src="{{ absolute_url(asset('icons/visible.svg')) }}">
+                    </a>
 
-                    {% if bundleForm %}
-                        {{ form_start(bundleForm, {'attr': {'class': 'w-45 pointer center z1'}}) }}
-                            <input 
-                                type="hidden"
-                                name="{{ field_name(bundleForm.documents) }}" 
-                                value="{{ null }}"
-                            >
-                            <button>
-                                <img width="20" src="{{ absolute_url(asset('icons/trash.svg')) }}">
-                            </button>
+                    {% if isApplication is not defined %}
 
-                            {{ form_widget(bundleForm._token) }}
-                        {{ form_end(bundleForm, {'render_rest': false}) }}
+                        {% if bundleForm %}
+                            {{ form_start(bundleForm, {'attr': {'class': 'w-45 pointer center z1'}}) }}
+                                <input 
+                                    type="hidden"
+                                    name="{{ field_name(bundleForm.documents) }}" 
+                                    value="{{ null }}"
+                                >
+                                <button>
+                                    <img width="20" src="{{ absolute_url(asset('icons/trash.svg')) }}">
+                                </button>
+
+                                {{ form_widget(bundleForm._token) }}
+                            {{ form_end(bundleForm, {'render_rest': false}) }}
+                        {% endif %}
+                    
                     {% endif %}
-                
-                {% endif %}
-            </div>
-        </div>
-
-        {% if isApplication is defined %}
-            <div class="center">
-                <img width="42" src="{{ absolute_url(asset('icons/puzzle.svg')) }}">
-                <p class="my-20">{{ 'document.No_documents_added'|trans }}</p>
-
-            </div>
-        {% else %}
-            <div class="center w-80">
-
-                <p class="pdl-infos-box t-left mb-3">
-                    {{ 'document.Partner_text'|trans }}<a href="{{ document.link }}" target="_blank">{{ document.websiteUrl }}</a> {{ document.textElement }}
-                    <img class="pb-5" width="16" src="{{ absolute_url(asset('icons/' ~ document.image2)) }}"> .
-                </p>
-                
-                <div class="pt-5 pb-3">
-
-                    <button
-                        class="btn white t-thin w-90 middle py-0"
-                        zb-popup="document-popup"
-                    >
-                        <img class="w-75" src="{{ absolute_url(asset('icons/' ~ document.image3)) }}">
-                    </button>
                 </div>
             </div>
+        {% else %}
+
+            {% if isApplication is defined %}
+                <div class="center">
+                    <img width="42" src="{{ absolute_url(asset('icons/puzzle.svg')) }}">
+                    <p class="my-20">{{ 'document.No_documents_added'|trans }}</p>
+
+                </div>
+            {% else %}
+
+                <div class="center w-80">
+
+                    <p class="pdl-infos-box t-left mb-3">
+                        {{ 'document.Partner_text'|trans }}<a href="{{ document.link }}" target="_blank">{{ document.websiteUrl }}</a> {{ document.textElement }}
+                        <img class="pb-5" width="16" src="{{ absolute_url(asset('icons/' ~ document.image2)) }}"> .
+                    </p>
+                    
+                    <div class="pt-5 pb-3">
+
+                        <button
+                            class="btn white t-thin w-90 middle py-0"
+                            zb-popup="document-popup"
+                        >
+                            <img class="w-75" src="{{ absolute_url(asset('icons/' ~ document.image3)) }}">
+                        </button>
+                    </div>
+                </div>
+            {% endif %}
         {% endif %}
     {% endfor %}
 </div>
@@ -69,7 +74,7 @@
 {% for document in get_documents() %}
 
 
-    {% if isApplication is not defined %}
+    {% if not file.extrafields and isApplication is not defined %}
 
         <zb-popup
             id="document-popup"
