@@ -19,21 +19,19 @@
 
                     {% if isApplication is null %}
 
-                        {% if bundleForm %}
-                            <div class="w-45 pointer center z1">
-                                <input 
-                                    type="hidden"
-                                    name="{{ field_name(form.documents) }}" 
-                                    value="{{ null }}"
-                                >
-                                <button>
-                                    <img width="20" src="{{ absolute_url(asset('icons/trash.svg')) }}">
-                                </button>
+                        <div class="w-45 pointer center z1">
+                            <input 
+                                type="hidden"
+                                name="{{ field_name(form.documents) }}" 
+                                value="{{ null }}"
+                            >
+                            <button>
+                                <img width="20" src="{{ absolute_url(asset('icons/trash.svg')) }}">
+                            </button>
 
-                            </div>
-                        {% endif %}
-                    
+                        </div>
                     {% endif %}
+                    
                 </div>
             </div>
         {% else %}
