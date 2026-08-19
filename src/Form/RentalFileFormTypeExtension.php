@@ -23,12 +23,4 @@ class RentalFileFormTypeExtension extends AbstractTypeExtension
                 'mapped' => false,
             ]);
     }
-
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => RentalFile::class,
-            'method' => 'PATCH',
-        ]);
-    }
 }
