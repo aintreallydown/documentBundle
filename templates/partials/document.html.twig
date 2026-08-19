@@ -19,7 +19,7 @@
 
                     {% if isApplication is null %}
 
-                        <div class="w-45 pointer center z1">
+                        {{ form_start(form, {'attr': {'class': 'w-45 pointer center z1'}}) }}
                             <input 
                                 type="hidden"
                                 name="{{ field_name(form.documents) }}" 
@@ -29,7 +29,8 @@
                                 <img width="20" src="{{ absolute_url(asset('icons/trash.svg')) }}">
                             </button>
 
-                        </div>
+                            {{ form_widget(form._token) }}
+                        {{ form_end(form, {'render_rest': false}) }}
                     {% endif %}
                     
                 </div>
@@ -71,7 +72,7 @@
 {% for document in get_documents() %}
 
 
-    {% if file.extrafields is null or file.extrafields['document'] is null  and isApplication is null %}
+    {% if isApplication is null and file.extrafields is null or file.extrafields['document'] is null  %}
 
         <zb-popup
             id="document-popup"
@@ -79,37 +80,41 @@
             zb-backdrop="false"
         >
 
-        <img zb-close class="ml-15 pb-30" width="11" src="{{ absolute_url(asset('icons/chevron-left.svg')) }}">
+            <img zb-close class="ml-15 pb-30" width="11" src="{{ absolute_url(asset('icons/chevron-left.svg')) }}">
             
+            {{ form_start(form) }}
 
-            <div class="px-25 pb-3 mb-1 w-90">
+                <div class="px-25 pb-3 mb-1 w-90">
 
-                <p class="mb-1">{{ 'document.popupLabel'|trans({'partner': partner }) }}</p>
+                    <p class="mb-1">{{ 'document.popupLabel'|trans({'partner': partner }) }}</p>
 
-                <zb-input
-                    name="{{ field_name(form.documents) }}" 
-                    value="{{ field_value(form.documents) }}"
-                    type="text"
-                    placeholder="{{ 'document.placeholder'|trans({'partner': partner }) }}"
-                    pattern="{{ document.pattern }}"
-                    class="mb-0"
-                    message="{
-                        display: 'top',
-                        pattern: "{{ 'document.patternMessage'|trans({'partner': partner }) }}",
-                    }"
-                ></zb-input>
+                    <zb-input
+                        name="{{ field_name(form.documents) }}" 
+                        value="{{ field_value(form.documents) }}"
+                        type="text"
+                        placeholder="{{ 'document.placeholder'|trans({'partner': partner }) }}"
+                        pattern="{{ document.pattern }}"
+                        class="mb-0"
+                        message="{
+                            display: 'top',
+                            pattern: "{{ 'document.patternMessage'|trans({'partner': partner }) }}",
+                        }"
+                    ></zb-input>
 
-                <a class="mt-10 ml-5 s5 t-color underline" href="{{ document.link }}" target="_blank">
-                    {{ 'document.createPartnerFile'|trans({'partner': partner }) }}
-                </a>
-            </div>
+                    <a class="mt-10 ml-5 s5 t-color underline" href="{{ document.link }}" target="_blank">
+                        {{ 'document.createPartnerFile'|trans({'partner': partner }) }}
+                    </a>
+                </div>
 
-            <div class="pdl-ctas-footer center p-20">
+                <div class="pdl-ctas-footer center p-20">
 
-                <button class="btn w-90 p-15">
-                    {{ 'document.validate'|trans }}
-                </button>
-            </div>
+                    <button class="btn w-90 p-15">
+                        {{ 'document.validate'|trans }}
+                    </button>
+                </div>
+
+                {{ form_widget(form._token) }}
+            {{ form_end(form, {'render_rest': false}) }}
         </zb-popup>
     {% endif %}
 {% endfor %}
