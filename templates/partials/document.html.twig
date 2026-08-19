@@ -20,18 +20,17 @@
                     {% if isApplication is null %}
 
                         {% if bundleForm %}
-                            {{ form_start(bundleForm, {'attr': {'class': 'w-45 pointer center z1'}}) }}
+                            <div class="w-45 pointer center z1">
                                 <input 
                                     type="hidden"
-                                    name="{{ field_name(bundleForm.documents) }}" 
+                                    name="{{ field_name(form.documents) }}" 
                                     value="{{ null }}"
                                 >
                                 <button>
                                     <img width="20" src="{{ absolute_url(asset('icons/trash.svg')) }}">
                                 </button>
 
-                                {{ form_widget(bundleForm._token) }}
-                            {{ form_end(bundleForm, {'render_rest': false}) }}
+                            </div>
                         {% endif %}
                     
                     {% endif %}
@@ -82,41 +81,37 @@
             zb-backdrop="false"
         >
 
-            <img zb-close class="ml-15 pb-30" width="11" src="{{ absolute_url(asset('icons/chevron-left.svg')) }}">
+        <img zb-close class="ml-15 pb-30" width="11" src="{{ absolute_url(asset('icons/chevron-left.svg')) }}">
             
-            {{ form_start(bundleForm) }}
 
-                <div class="px-25 pb-3 mb-1 w-90">
+            <div class="px-25 pb-3 mb-1 w-90">
 
-                    <p class="mb-1">{{ 'document.popupLabel'|trans({'partner': partner }) }}</p>
+                <p class="mb-1">{{ 'document.popupLabel'|trans({'partner': partner }) }}</p>
 
-                    <zb-input
-                        name="{{ field_name(bundleForm.documents) }}" 
-                        value="{{ field_value(bundleForm.documents) }}"
-                        type="text"
-                        placeholder="{{ 'document.placeholder'|trans({'partner': partner }) }}"
-                        pattern="{{ document.pattern }}"
-                        class="mb-0"
-                        message="{
-                            display: 'top',
-                            pattern: "{{ 'document.patternMessage'|trans({'partner': partner }) }}",
-                        }"
-                    ></zb-input>
+                <zb-input
+                    name="{{ field_name(form.documents) }}" 
+                    value="{{ field_value(form.documents) }}"
+                    type="text"
+                    placeholder="{{ 'document.placeholder'|trans({'partner': partner }) }}"
+                    pattern="{{ document.pattern }}"
+                    class="mb-0"
+                    message="{
+                        display: 'top',
+                        pattern: "{{ 'document.patternMessage'|trans({'partner': partner }) }}",
+                    }"
+                ></zb-input>
 
-                    <a class="mt-10 ml-5 s5 t-color underline" href="{{ document.link }}" target="_blank">
-                        {{ 'document.createPartnerFile'|trans({'partner': partner }) }}
-                    </a>
-                </div>
+                <a class="mt-10 ml-5 s5 t-color underline" href="{{ document.link }}" target="_blank">
+                    {{ 'document.createPartnerFile'|trans({'partner': partner }) }}
+                </a>
+            </div>
 
-                <div class="pdl-ctas-footer center p-20">
+            <div class="pdl-ctas-footer center p-20">
 
-                    <button class="btn w-90 p-15">
-                        {{ 'document.validate'|trans }}
-                    </button>
-                </div>
-
-                {{ form_widget(bundleForm._token) }}
-            {{ form_end(bundleForm, {'render_rest': false}) }}
+                <button class="btn w-90 p-15">
+                    {{ 'document.validate'|trans }}
+                </button>
+            </div>
         </zb-popup>
     {% endif %}
 {% endfor %}
