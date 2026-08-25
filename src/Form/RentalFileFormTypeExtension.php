@@ -31,6 +31,7 @@ class RentalFileFormTypeExtension extends AbstractTypeExtension
             $file = $form->getData();
 
             $extrafields = $file->getExtrafields() ?? [];
+
             $extrafields['document'] = $form->get('documents')->getData();
 
             $file->setExtrafields($extrafields);
