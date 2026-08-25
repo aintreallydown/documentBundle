@@ -2,7 +2,7 @@
 
 namespace aintreallydown\DocumentBundle\Twig;
 
-use App\Entity\Document;
+use aintreallydown\DocumentBundle\Entity\Document;
 use Doctrine\ORM\EntityManagerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
