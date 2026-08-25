@@ -15,8 +15,7 @@ class Document
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $title = null;
-
+    private ?string $h3 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $partner = null;
@@ -39,26 +38,11 @@ class Document
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image2 = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $image3 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $placeholder = null;
-
-
-
     #[ORM\Column]
     private ?int $value = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $label = null;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $pattern = null;
-
-
-
-
 
 
     public function getId(): ?int
@@ -126,17 +110,6 @@ class Document
         return $this;
     }
 
-    public function getPlaceholder(): ?string
-    {
-        return $this->placeholder;
-    }
-
-    public function setPlaceholder(string $placeholder): static
-    {
-        $this->placeholder = $placeholder;
-
-        return $this;
-    }
 
     public function getValue(): ?int
     {
@@ -150,26 +123,15 @@ class Document
         return $this;
     }
 
-    public function getLabel(): ?string
+
+    public function getH3(): ?string
     {
-        return $this->label;
+        return $this->h3;
     }
 
-    public function setLabel(string $label): static
+    public function setH3(?string $h3): static
     {
-        $this->label = $label;
-
-        return $this;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(?string $title): static
-    {
-        $this->title = $title;
+        $this->h3 = $h3;
 
         return $this;
     }
@@ -194,18 +156,6 @@ class Document
     public function setWebsiteUrl(?string $websiteUrl): static
     {
         $this->websiteUrl = $websiteUrl;
-
-        return $this;
-    }
-
-    public function getImage3(): ?string
-    {
-        return $this->image3;
-    }
-
-    public function setImage3(?string $image3): static
-    {
-        $this->image3 = $image3;
 
         return $this;
     }

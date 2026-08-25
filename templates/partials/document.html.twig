@@ -51,7 +51,6 @@
 
                         <a class="pdl-infos-box t-left mb-3" href="{{ document.link }}" target="_blank">
                             {{ document.textElement }}
-                            <img class="pb-5" width="16" src="{{ absolute_url(asset('icons/' ~ document.image2)) }}"> .
                         </a>
 
 
@@ -59,7 +58,6 @@
 
                         <p class="pdl-infos-box t-left mb-3">
                             {{ document.textElement }}
-                            <img class="pb-5" width="16" src="{{ absolute_url(asset('icons/' ~ document.image2)) }}"> .
                         </p>
                 
                     {% endif %}
@@ -70,7 +68,7 @@
                             class="btn white t-thin w-90 middle py-0"
                             zb-popup="document-popup"
                         >
-                            <img class="w-75" src="{{ absolute_url(asset('icons/' ~ document.image3)) }}">
+                            <img class="w-75" src="{{ absolute_url(asset('icons/' ~ document.image2)) }}">
                         </button>
                     </div>
                 </div>
