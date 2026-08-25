@@ -12,7 +12,7 @@
         "symfony/doctrine-bridge": "^7.2",
         "twig/twig": "^3.0",
         "symfony/twig-bridge": "^7.2",
-        "doctrine/doctrine-bundle": "^2.19",
+        "doctrine/doctrine-bundle": "^2.18.3",
         "symfony/translation": "^7.2"
     },
     "license": "MIT",
