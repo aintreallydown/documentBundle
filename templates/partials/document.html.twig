@@ -10,7 +10,7 @@
                 <div class="w-15 blue-frame shape:1/1">
                     <img class="w-80 sm mr-5" src="{{ absolute_url(asset('icons/' ~ document.image1)) }}">
                 </div>
-                <h3 class="ml-15 w-65">{{ document.title }}</h3>
+                <h3 class="ml-15 w-65">{{ document.h3 }}</h3>
 
                 <div class="flex group sm middle right w-20">
                     <a class="w-45 pointer center" href="{{ file.extrafields['document'] }}" target="_blank">
@@ -52,7 +52,6 @@
                         <a class="pdl-infos-box shadow t-left mb-3" href="{{ document.link }}" target="_blank">
                             {{ document.textElement }}
                         </a>
-
 
                     {% else %}
 
