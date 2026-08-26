@@ -18,6 +18,14 @@ class DocumentExtension extends Extension implements PrependExtensionInterface
 
     public function prepend(ContainerBuilder $container): void
     {
+        $container->prependExtensionConfig('framework', [
+            'translator' => [
+                'paths' => [
+                    __DIR__ . '/../../translations',
+                ],
+            ],
+        ]);
+
         $container->prependExtensionConfig('doctrine', [
             'orm' => [
                 'mappings' => [
