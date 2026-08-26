@@ -41,7 +41,7 @@
 
                 <div class="center">
                     <img width="42" src="{{ absolute_url(asset('icons/puzzle.svg')) }}">
-                    <p class="my-20">{{ 'bundle.document.no_documents_added'|trans({}, 'documentbundle') }}</p>
+                    <p class="my-20">{{ 'bundle.document.no_documents_added'|trans({}, 'documentBundle') }}</p>
                 </div>
             {% else %}
 
@@ -95,30 +95,30 @@
 
                 <div class="px-25 pb-3 mb-1 w-90">
 
-                    <p class="mb-1">{{ 'bundle.document.popupLabel'|trans({'partner': document.partner }, 'documentbundle') }}</p>
+                    <p class="mb-1">{{ 'bundle.document.popupLabel'|trans({'partner': document.partner }, 'documentBundle') }}</p>
 
                     <zb-input
                         name="{{ field_name(form.documents) }}" 
                         value="{{ field_value(form.documents) }}"
                         type="text"
-                        placeholder="{{ 'bundle.document.placeholder'|trans({'partner': document.partner }, 'documentbundle') }}"
+                        placeholder="{{ 'bundle.document.placeholder'|trans({'partner': document.partner }, 'documentBundle') }}"
                         pattern="{{ document.pattern }}"
                         class="mb-0"
                         message="{
                             display: 'top',
-                            pattern: "{{ 'bundle.document.patternMessage'|trans({'partner': document.partner }, 'documentbundle') }}",
+                            pattern: "{{ 'bundle.document.patternMessage'|trans({'partner': document.partner }, 'documentBundle') }}",
                         }"
                     ></zb-input>
 
                     <a class="mt-10 ml-5 s5 t-color underline" href="{{ document.link }}" target="_blank">
-                        {{ 'bundle.document.createPartnerFile'|trans({'partner': document.partner }, 'documentbundle') }}
+                        {{ 'bundle.document.createPartnerFile'|trans({'partner': document.partner }, 'documentBundle') }}
                     </a>
                 </div>
 
                 <div class="pdl-ctas-footer center p-20">
 
                     <button class="btn w-90 p-15">
-                        {{ 'bundle.document.validate'|trans({}, 'documentbundle') }}
+                        {{ 'bundle.document.validate'|trans({}, 'documentBundle') }}
                     </button>
                 </div>
 
