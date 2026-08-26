@@ -1,9 +1,0 @@
-bundle:
-  document:
-    partner_text: '123 Loger partners with '
-    no_documents_added: 'No documents added'
-    popupLabel: 'Copy and paste your {partner} link to add your documents to your rental file'
-    placeholder: 'Add your {partner} link here'
-    createPartnerFile: 'Create a {partner} account'
-    validate: 'Validate'
-    patternMessage: 'The {partner} link is not valid. Please check your link and try again.'

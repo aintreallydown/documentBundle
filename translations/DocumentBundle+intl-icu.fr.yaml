@@ -1,9 +1,0 @@
-bundle:
-  document:
-    partner_text: '123 Loger s''allie avec '
-    no_documents_added: '0 document ajouté'
-    popupLabel: 'Insérez votre lien {partner} pour ajouter vos justificatifs de façon sécurisée.'
-    placeholder: 'Ajouter un lien {partner}'
-    createPartnerFile: 'Créer un {partner}'
-    validate: 'Valider'
-    patternMessage: 'Le lien {partner} n''est pas valide. Veuillez vérifier votre lien et réessayer.'
