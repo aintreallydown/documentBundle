@@ -29,12 +29,12 @@ class DocumentExtension extends Extension implements PrependExtensionInterface
         $container->prependExtensionConfig('doctrine', [
             'orm' => [
                 'mappings' => [
-                    'DocumentBundle' => [
+                    'DepositBundle' => [
                         'is_bundle' => false,
                         'type' => 'attribute',
                         'dir' => __DIR__ . '/../Entity',
-                        'prefix' => 'aintreallydown\\DocumentBundle\\Entity',
-                        'alias' => 'DocumentBundle',
+                        'prefix' => 'aintreallydown\\DepositBundle\\Entity',
+                        'alias' => 'DepositBundle',
                     ],
                 ],
             ],
