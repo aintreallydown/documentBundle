@@ -41,7 +41,7 @@
 
                 <div class="center">
                     <img width="42" src="{{ absolute_url(asset('icons/puzzle.svg')) }}">
-                    <p class="my-20">{{ 'bundle.document.no_documents_added'|trans }}</p>
+                    <p class="my-20">{{ 'bundle.document.no_documents_added'|trans({}, 'DocumentBundle') }}</p>
                 </div>
             {% else %}
 
@@ -49,7 +49,7 @@
 
                     {% if document.link is not null %}
 
-                        <a class="pdl-infos-box t-left mb-3" href="{{ document.link }}" target="_blank">
+                        <a class="pdl-infos-box-shadow t-left mb-3" href="{{ document.link }}" target="_blank">
                             {{ document.textElement }}
                         </a>
 
@@ -96,30 +96,30 @@
 
                 <div class="px-25 pb-3 mb-1 w-90">
 
-                    <p class="mb-1">{{ 'bundle.document.popupLabel'|trans({'partner': document.partner }) }}</p>
+                    <p class="mb-1">{{ 'bundle.document.popupLabel'|trans({'partner': document.partner }, 'DocumentBundle') }}</p>
 
                     <zb-input
                         name="{{ field_name(form.documents) }}" 
                         value="{{ field_value(form.documents) }}"
                         type="text"
-                        placeholder="{{ 'bundle.document.placeholder'|trans({'partner': document.partner }) }}"
+                        placeholder="{{ 'bundle.document.placeholder'|trans({'partner': document.partner }, 'DocumentBundle') }}"
                         pattern="{{ document.pattern }}"
                         class="mb-0"
                         message="{
                             display: 'top',
-                            pattern: "{{ 'bundle.document.patternMessage'|trans({'partner': document.partner }) }}",
+                            pattern: "{{ 'bundle.document.patternMessage'|trans({'partner': document.partner }, 'DocumentBundle') }}",
                         }"
                     ></zb-input>
 
                     <a class="mt-10 ml-5 s5 t-color underline" href="{{ document.link }}" target="_blank">
-                        {{ 'bundle.document.createPartnerFile'|trans({'partner': document.partner }) }}
+                        {{ 'bundle.document.createPartnerFile'|trans({'partner': document.partner }, 'DocumentBundle') }}
                     </a>
                 </div>
 
                 <div class="pdl-ctas-footer center p-20">
 
                     <button class="btn w-90 p-15">
-                        {{ 'bundle.document.validate'|trans }}
+                        {{ 'bundle.document.validate'|trans({}, 'DocumentBundle') }}
                     </button>
                 </div>
 
