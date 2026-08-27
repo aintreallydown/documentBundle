@@ -20,8 +20,6 @@ class Document
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $partner = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $file = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $textElement = null;
@@ -38,8 +36,6 @@ class Document
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image2 = null;
 
-    #[ORM\Column]
-    private ?int $value = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $pattern = null;
@@ -111,19 +107,6 @@ class Document
     }
 
 
-    public function getValue(): ?int
-    {
-        return $this->value;
-    }
-
-    public function setValue(int $value): static
-    {
-        $this->value = $value;
-
-        return $this;
-    }
-
-
     public function getH3(): ?string
     {
         return $this->h3;
@@ -136,17 +119,6 @@ class Document
         return $this;
     }
 
-    public function getFile(): ?string
-    {
-        return $this->file;
-    }
-
-    public function setFile(?string $file): static
-    {
-        $this->file = $file;
-
-        return $this;
-    }
 
     public function getWebsiteUrl(): ?string
     {
