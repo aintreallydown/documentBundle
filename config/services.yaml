@@ -10,4 +10,3 @@ services:
             - '../src/DependencyInjection/'
             - '../src/DocumentBundle.php'
             - '../src/Entity/'
-            - '../src/Resources/'
