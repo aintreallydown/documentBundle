@@ -39,10 +39,10 @@ class DocumentExtension extends Extension implements PrependExtensionInterface
             ],
         ]);
 
-        // $container->prependExtensionConfig('twig', [
-        //     'paths' => [
-        //         __DIR__ . '/../../templates' => 'DocumentBundle',
-        //     ],
-        // ]);
+        $container->prependExtensionConfig('twig', [
+            'paths' => [
+                __DIR__ . '/../../templates' => 'DocumentBundle',
+            ],
+        ]);
     }
 }

@@ -11,6 +11,3 @@ services:
             - '../src/DocumentBundle.php'
             - '../src/Entity/'
             - '../src/Resources/'
-    twig:
-        paths:
-            '%kernel.project_dir%/vendor/aintreallydown/document-bundle/templates': DocumentBundle
