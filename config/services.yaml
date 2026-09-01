@@ -10,3 +10,6 @@ services:
             - '../src/DependencyInjection/'
             - '../src/DocumentBundle.php'
             - '../src/Entity/'
+twig:
+    paths:
+        '%kernel.project_dir%/vendor/aintreallydown/document-bundle/templates': DocumentBundle
